@@ -1,8 +1,18 @@
 aid: syzygy-plasmonics
 name: Syzygy Plasmonics
-description: 'Syzygy Plasmonics is a company surfaced via the API Evangelist harvest backlog (source:
-  secondary-market) and added to the network as a stub for full-pipeline profiling.'
+description: >-
+  Syzygy Plasmonics is a Houston, Texas deep-decarbonization company commercializing
+  photocatalytic chemical manufacturing. Its Rigel reactor cell uses photonic energy from
+  renewable electricity in place of combustion heat to drive reforming reactions, and its
+  NovaSAF / GHG e-Reforming pathway converts waste biogas into low-carbon sustainable
+  aviation fuel, independently assessed as eligible for both ISCC EU RFNBO and Advanced
+  BioSAF certification. Adjacent targets include hydrogen from ammonia e-cracking, syngas,
+  methanol, butadiene and other commodity chemicals, sold as reactor hardware plus a
+  licensing and front-end engineering support package. Syzygy is a hardware and
+  process-licensing business, not a software vendor: as of 2026-08-29 it publishes no
+  developer portal, API reference, SDK, or machine-readable specification of any kind.
 url: https://raw.githubusercontent.com/api-evangelist/syzygy-plasmonics/refs/heads/main/apis.yml
+image: https://www.plasmonics.tech/Logo-Desktop-W.svg
 x-type: company
 x-source: harvest:secondary-market
 x-tier: stub
@@ -12,6 +22,14 @@ created: '2026-08-29'
 modified: '2026-08-29'
 tags:
 - Company
+- Energy
+- Cleantech
+- Hydrogen
+- Sustainable Aviation Fuel
+- Chemicals
+- Decarbonization
+- Manufacturing
+- Photocatalysis
 apis: []
 maintainers:
 - FN: Kin Lane
@@ -19,5 +37,53 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: DomainSecurity
+  url: security/syzygy-plasmonics-domain-security.yml
 - type: Website
+  url: https://www.plasmonics.tech/
+- type: Contact
+  url: https://www.plasmonics.tech/contact
+- type: PrivacyPolicy
+  url: https://www.plasmonics.tech/privacy-policy
+- type: TermsOfService
+  url: https://www.plasmonics.tech/terms-conditions
+- type: GitHubOrganization
+  url: https://github.com/Syzygy-Plasmonics
+- type: LinkedIn
+  url: https://www.linkedin.com/company/syzygy-plasmonics/
+- type: Patents
+  url: https://www.plasmonics.tech/patents
+- type: CodeOfConduct
+  url: https://www.plasmonics.tech/code-of-conduct-and-anti-corruption-policy
+- type: Listing
   url: https://forgeglobal.com/syzygy-plasmonics_stock/
+x-enrichment:
+  date: '2026-08-29'
+  status: minimal
+  artifacts_added: 2
+  pass: local-v1
+x-coverage:
+  state: none
+  reason: not-a-software-company
+  detail: >-
+    Syzygy Plasmonics sells photocatalytic reactor hardware and SAF process licenses — its
+    entire web presence is a single Next.js marketing page whose nav is SAF Solutions /
+    Technology / Projects / Contact Us, with no developer, docs, or API section, no
+    api./docs./developer. subdomain in DNS, and a GitHub org (Syzygy-Plasmonics) that has
+    existed since 2020 with zero public repositories.
+  evidence:
+  - url: https://www.plasmonics.tech/
+    status: 200
+  - url: https://www.plasmonics.tech/openapi.json
+    status: 404
+  - url: https://www.plasmonics.tech/llms.txt
+    status: 404
+  - url: https://www.plasmonics.tech/.well-known/api-catalog
+    status: 200
+  - url: https://www.plasmonics.tech/.well-known/agent-card.json
+    status: 404
+  - url: https://api.plasmonics.tech/
+    status: 0
+  - url: https://github.com/Syzygy-Plasmonics
+    status: 200
+  checked: '2026-08-29'

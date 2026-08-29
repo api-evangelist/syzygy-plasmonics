@@ -1,0 +1,56 @@
+generated: '2026-08-29'
+method: probed
+source: live GET of /.well-known/* on every Syzygy Plasmonics host
+note: >-
+  No /.well-known document is served. www.plasmonics.tech is a Next.js marketing site whose
+  router answers 200 with the full homepage (68,987 bytes, <!DOCTYPE html>) for every unknown
+  path — the same body a control probe of /zzzz-nope-12345 returned — so the 200s recorded
+  below for api-catalog, openid-configuration and oauth-authorization-server are soft-404 SPA
+  shells, not documents. No WellKnown or SecurityTxt pointer is emitted: every path is a miss.
+control_probe:
+  url: https://www.plasmonics.tech/zzzz-nope-12345
+  status: 200
+  bytes: 68987
+  note: catch-all baseline — any 200 of this size is a soft 404
+hosts:
+- host: www.plasmonics.tech
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /.well-known/openid-configuration
+    status: 200
+    file: null
+    note: soft 404 — text/html homepage shell, 68987 bytes
+  - path: /.well-known/oauth-authorization-server
+    status: 200
+    file: null
+    note: soft 404 — text/html homepage shell, 68987 bytes
+  - path: /.well-known/api-catalog
+    status: 200
+    file: null
+    note: soft 404 — text/html homepage shell, 68987 bytes
+  - path: /.well-known/ai-plugin.json
+    status: 404
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 404
+    file: null
+  - path: /.well-known/agent.json
+    status: 404
+    file: null
+- host: syzygyplasmonics.com
+  note: legacy domain, 301s to https://www.plasmonics.tech/
+  documents:
+  - path: /.well-known/security.txt
+    status: 404
+    file: null
+  - path: /.well-known/api-catalog
+    status: 404
+    file: null
+  - path: /.well-known/agent-card.json
+    status: 404
+    file: null
+  - path: /.well-known/agent.json
+    status: 404
+    file: null
