@@ -31,7 +31,7 @@ x-tier: stub
 x-tier-reason: harvest
 specificationVersion: '0.20'
 created: '2026-08-29'
-modified: '2026-08-29'
+modified: '2026-10-06'
 tags:
 - Company
 - Energy
@@ -49,6 +49,8 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- url: https://www.plasmonics.tech/blog/
+  type: Blog
 - type: DomainSecurity
   url: security/syzygy-plasmonics-domain-security.yml
 - type: Website
